@@ -43,6 +43,7 @@ img{display:block;max-width:100%}
 .frame{max-width:1320px;margin:0 auto;padding-left:var(--m);padding-right:var(--m)}
 h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:.95;margin:0;text-transform:uppercase}
 h2{font-size:var(--s-head)}
+h1,h2,h3,.lead,.tag,.sub,.calc > p,.quote{text-wrap:balance}
 p{margin:0}
 .lead{font-size:var(--s-lead);line-height:1.35;color:var(--soft);max-width:30em}
 .small{font-size:var(--s-small);color:var(--dim)}
@@ -78,82 +79,77 @@ p{margin:0}
 .trust li{display:flex;align-items:center;gap:9px}
 .trust li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neon);flex:none}
 
-/* sections */
-.sec{padding-top:clamp(96px,11vw,160px)}
-.split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
-.split > .l{grid-column:1 / span 5}
-.split > .r{grid-column:7 / -1}
-.sec-head .lead{margin-top:22px}
+/* sections: one centred column, symmetric everywhere */
+.sec{padding-top:clamp(96px,11vw,160px);text-align:center}
+.col{max-width:880px;margin-left:auto;margin-right:auto}
+.sec .lead,.plan .lead{margin:22px auto 0}
+.sec-body{margin-top:clamp(36px,4.5vw,64px) !important}
 
 /* prices */
 .x{position:relative;display:inline-block;color:var(--neon)}
 .x::after{content:"";position:absolute;left:-4%;right:-4%;top:48%;height:.1em;background:var(--red);border-radius:.05em;transform:rotate(-5deg) scaleX(1);transform-origin:left center}
 .ptable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.ptable caption{caption-side:top;text-align:left;font-size:var(--s-small);color:var(--soft);padding-bottom:14px}
-.ptable th{font-weight:500;font-size:var(--s-small);color:var(--soft);text-align:right;padding:0 0 12px 12px}
-.ptable th:first-child{text-align:left;padding-left:0}
-.ptable td{padding:22px 0 22px 12px;text-align:right;vertical-align:baseline}
+.ptable caption{caption-side:top;text-align:center;font-size:var(--s-small);color:var(--soft);padding-bottom:14px}
+.ptable th{font-weight:500;font-size:var(--s-small);color:var(--soft);text-align:center;padding:0 6px 12px}
+.ptable td{padding:22px 6px;text-align:center;vertical-align:middle}
 .ptable tbody tr{background:var(--tone)}
 .ptable tbody tr + tr{border-top:6px solid var(--bg)}
-.ptable td:first-child{text-align:left;padding-left:22px;font-family:var(--display);font-weight:600;font-size:var(--s-lead);text-transform:uppercase}
-.ptable td:last-child{padding-right:22px}
+.ptable td:first-child{font-family:var(--display);font-weight:600;font-size:var(--s-lead);text-transform:uppercase}
 .ptable .us{font-family:var(--display);font-weight:700;font-size:var(--s-sub);line-height:1}
 .ptable .them{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;font-size:var(--s-body)}
 .ptable .save{color:var(--neon);font-weight:600;font-size:var(--s-body)}
 .ptable-note{margin-top:16px}
 
 /* plan + live thing */
-.plan{background:var(--tone);margin-top:clamp(96px,11vw,160px)}
-.plan-in{padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
+.plan{background:var(--tone);margin-top:clamp(96px,11vw,160px);text-align:center}
+.plan-in{padding-top:clamp(64px,8vw,112px);padding-bottom:clamp(64px,8vw,112px)}
 .offer{font-size:var(--s-head)}
 .price-block{display:inline-block;background:var(--neon);color:var(--bg);padding:0 .15em;line-height:1.02}
-.plan-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-top:40px}
-.plan-row p{max-width:34em;color:var(--soft);font-size:var(--s-lead);line-height:1.35}
-.calc{margin-top:clamp(56px,7vw,96px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:32px}
-.calc-l{grid-column:1 / span 4}
-.calc-r{grid-column:6 / -1}
+.plan .btn{margin-top:32px}
+.calc{margin-top:clamp(72px,9vw,120px)}
 .calc h3{font-size:var(--s-sub)}
-.calc-l p{margin-top:16px;color:var(--soft)}
+.calc > p{margin:16px auto 0;color:var(--soft);max-width:32em}
 .seg{display:inline-flex;margin-top:28px;background:var(--bg);border-radius:999px;padding:5px;gap:4px}
 .seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label{font-weight:600;font-size:var(--s-body);padding:12px 22px;border-radius:999px;cursor:pointer;color:var(--soft);transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out);user-select:none}
+.seg label{font-weight:600;font-size:var(--s-body);padding:12px 26px;border-radius:999px;cursor:pointer;color:var(--soft);transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out);user-select:none}
 .seg label:active{transform:scale(.96)}
 .seg input:checked + label{background:var(--accent);color:var(--bg)}
 .seg input:focus-visible + label{outline:3px solid var(--accent);outline-offset:2px}
-.bar + .bar{margin-top:36px}
-.bar-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:14px}
-.bar-top b{font-family:var(--display);font-weight:700;font-size:var(--s-sub);line-height:.9;font-variant-numeric:tabular-nums}
-.bar-top span{color:var(--soft);font-size:var(--s-body);text-align:right}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.bar{background:var(--bg);border-radius:16px;padding:28px 24px}
+.bar-top{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:20px}
+.bar-top b{font-family:var(--display);font-weight:700;font-size:var(--s-head);line-height:.9;font-variant-numeric:tabular-nums}
+.bar-top span{color:var(--soft);font-size:var(--s-body)}
 .us-bar .bar-top b{color:var(--accent)}
 .them-bar .bar-top b{color:var(--dim)}
-.tiles{display:flex;flex-wrap:wrap;gap:5px;min-height:20px}
-.tiles i{display:block;width:clamp(12px,1.25vw,17px);aspect-ratio:9/16;border-radius:3px;background:var(--accent)}
+.tiles{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;min-height:20px}
+.tiles i{display:block;width:clamp(11px,1.1vw,15px);aspect-ratio:9/16;border-radius:3px;background:var(--accent)}
 .them-bar .tiles i{background:#3a465c}
 .tiles.anim i{animation:tile 420ms var(--ease-out) both;animation-delay:calc(var(--d) * 4ms)}
 @keyframes tile{from{opacity:0;transform:translateY(6px) scale(.9)}}
 .calc-note{margin-top:22px}
 
-/* models */
-.models{list-style:none;margin:0;padding:0}
-.models li{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:baseline;padding:26px 0}
-.models li + li{margin-top:2px}
-.models .kind{grid-column:1 / span 2;color:var(--dim);font-size:var(--s-small)}
-.models .mname{grid-column:3 / span 5;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-sub);line-height:.95;color:var(--accent)}
-.models .what{grid-column:8 / span 3;color:var(--soft)}
-.models .ok{grid-column:11 / -1;text-align:right;color:var(--neon);font-weight:600;font-size:var(--s-small);display:flex;align-items:center;justify-content:flex-end;gap:8px}
-.models .ok::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neon)}
-.models-head{margin-bottom:clamp(32px,4vw,56px)}
+/* rows (models + coming soon): symmetric bands inside the centred column */
+.rows{list-style:none;margin-left:auto;margin-right:auto;padding:0;text-align:left}
+.rows li{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--tone);border-radius:14px;padding:22px 28px}
+.rows li + li{margin-top:8px}
+.rows .t{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-sub);line-height:1}
+.rows .d{display:block;margin-top:6px;color:var(--soft)}
+.rows .s{color:var(--soft);text-align:right;flex:none}
+.models .t{color:var(--accent)}
+.ok{display:flex;align-items:center;gap:8px;color:var(--neon);font-weight:600;font-size:var(--s-small);flex:none}
+.ok::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neon)}
+.soon .next{background:var(--tone2)}
+.soon .next .s{color:var(--neon);font-weight:600;white-space:nowrap}
 
 /* reviews */
-.quote{margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-hero);line-height:.92}
-.quote .ln{display:flex;justify-content:space-between;gap:.25em}
-.quote .ln + .ln{margin-top:.12em}
-.quote-by{display:flex;justify-content:space-between;gap:16px;margin-top:26px;color:var(--soft);font-size:var(--s-body)}
+.quote{margin-left:0;margin-right:0;margin-bottom:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-head);line-height:.95}
+.quote-by{margin-top:20px;color:var(--soft);font-size:var(--s-body)}
 .quote-by b{color:var(--ink);font-weight:600}
-.chan{margin-top:clamp(56px,7vw,96px);background:var(--tone);border-radius:18px;padding:clamp(18px,2.4vw,32px)}
-.chan-h{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--soft);font-size:var(--s-body);padding-bottom:18px}
+.chan{max-width:1080px;margin:clamp(48px,6vw,80px) auto 0;background:var(--tone);border-radius:18px;padding:clamp(18px,2.4vw,32px);text-align:left}
+.chan-h{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600;color:var(--soft);font-size:var(--s-body);padding-bottom:18px}
 .chan-h b{color:var(--ink)}
-.msgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.msgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .msg{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px;border-radius:12px;background:var(--tone2)}
 .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:var(--s-body);color:var(--bg)}
 .msg-top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
@@ -164,55 +160,37 @@ p{margin:0}
 .chan-note a{color:var(--accent)}
 
 /* how */
-.stairs{list-style:none;margin:clamp(40px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:clamp(36px,4vw,56px)}
-.stairs li:nth-child(1){grid-column:1 / span 7}
-.stairs li:nth-child(2){grid-column:3 / span 7}
-.stairs li:nth-child(3){grid-column:5 / span 8}
-.stairs li:nth-child(4){grid-column:7 / span 6}
-.stairs h3{font-size:var(--s-sub);line-height:1}
-.stairs li:last-child h3{color:var(--neon)}
-.stairs p{margin-top:12px;color:var(--soft);max-width:34ch}
-
-/* soon */
-.soon{list-style:none;margin:0;padding:0}
-.soon li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0}
-.soon li + li{margin-top:2px}
-.soon .t{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-sub);line-height:1}
-.soon .s{color:var(--soft);text-align:right}
-.soon .next{background:var(--tone);padding:28px 24px;border-radius:14px;margin-bottom:10px}
-.soon .next .t{font-size:var(--s-sub)}
-.soon .next .s{color:var(--neon);font-weight:600;white-space:nowrap}
+.steps{list-style:none;max-width:1080px;margin-left:auto;margin-right:auto;margin-bottom:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.steps li{background:var(--tone);border-radius:16px;padding:32px 22px}
+.steps h3{font-size:clamp(26px,1rem + 1.2vw,36px);line-height:1.05}
+.steps li:last-child h3{color:var(--neon)}
+.steps p{margin-top:12px;color:var(--soft)}
 
 /* faq */
-.faq{margin-top:clamp(40px,5vw,80px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-.faq-list{grid-column:5 / -1}
-details{border-radius:14px;transition:background-color 220ms ease}
+.faq{text-align:left}
+details{border-radius:14px;background:var(--tone);transition:background-color 220ms ease}
 details + details{margin-top:8px}
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 24px;font-size:var(--s-lead);font-weight:500}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"";width:12px;height:12px;flex:none;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:translateY(-3px) rotate(45deg);transition:transform 220ms var(--ease-out)}
-details[open]{background:var(--tone)}
+details[open]{background:var(--tone2)}
 details[open] summary::after{transform:translateY(2px) rotate(-135deg)}
-details .ans{padding:0 24px 24px;color:var(--soft);max-width:52ch}
+details .ans{padding:0 24px 24px;color:var(--soft);max-width:66ch}
 details[open] .ans{animation:ans 260ms var(--ease-out)}
 @keyframes ans{from{opacity:0;transform:translateY(-6px)}}
-@media (hover:hover) and (pointer:fine){details:not([open]):hover{background:var(--tone)}}
+@media (hover:hover) and (pointer:fine){details:not([open]):hover{background:var(--tone2)}}
 
 /* close */
-.close{background:var(--close);margin-top:clamp(96px,11vw,160px);padding:40px 0 32px;color:#fff}
-.close-top{display:flex;justify-content:space-between;gap:20px;font-size:var(--s-small);color:#d9ddff}
-.close-top a{text-decoration:none}
-.close-mid{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:clamp(16px,3vw,40px);margin-top:clamp(64px,10vw,140px)}
-.close-mid img{width:clamp(110px,14vw,220px);height:auto}
+.close{background:var(--close);margin-top:clamp(96px,11vw,160px);padding:clamp(64px,8vw,112px) 0 32px;color:#fff;text-align:center}
+.close img{width:clamp(130px,14vw,220px);height:auto;margin:0 auto 18px}
 .close h2{font-size:var(--s-head)}
 .close h2 + p{margin-top:14px;color:#d9ddff;font-size:var(--s-lead)}
-.contact{display:block;margin-top:clamp(40px,6vw,72px);font-family:var(--display);font-weight:700;text-transform:lowercase;font-size:var(--s-hero);line-height:.9;letter-spacing:-.01em;text-decoration:none;word-break:break-word}
-.contact span{display:inline-block;transition:transform 260ms var(--ease-out)}
-@media (hover:hover) and (pointer:fine){.contact:hover span{transform:translateX(.08em)}}
+.contact{display:block;margin-top:clamp(36px,5vw,64px);font-family:var(--display);font-weight:700;text-transform:lowercase;font-size:clamp(46px,9vw,150px);line-height:.9;letter-spacing:-.01em;text-decoration:none}
+.contact span{display:inline-block}
 .close .btn{margin-top:36px}
-.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;margin-top:clamp(56px,8vw,110px);font-size:var(--s-small);color:#d9ddff}
+.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(56px,8vw,96px);font-size:var(--s-small);color:#d9ddff}
 .meta a{text-decoration:none}
-@media (hover:hover) and (pointer:fine){.meta a:hover,.close-top a:hover{color:#fff;text-decoration:underline}}
+@media (hover:hover) and (pointer:fine){.meta a:hover{color:#fff;text-decoration:underline}}
 
 /* motion: entrances only when motion is welcome; content stays visible if script fails */
 @media (prefers-reduced-motion:no-preference){
@@ -233,50 +211,34 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 /* tablet */
 @media (max-width:1000px){
   .nav ul{display:none}
-  .split > .l,.split > .r{grid-column:1 / -1}
-  .split > .r{margin-top:40px}
-  .calc-l,.calc-r{grid-column:1 / -1}
-  .models li{grid-template-columns:1fr auto;row-gap:6px}
-  .models .kind{grid-column:1 / -1;grid-row:1}
-  .models .mname{grid-column:1;grid-row:2}
-  .models .ok{grid-column:2;grid-row:2}
-  .models .what{grid-column:1 / -1;grid-row:3}
+  .steps{grid-template-columns:1fr 1fr}
   .msgs{grid-template-columns:1fr}
-  .faq-list{grid-column:1 / -1}
-  .stairs li:nth-child(n){grid-column:1 / -1}
-  .stairs li:nth-child(2){padding-left:6vw}
-  .stairs li:nth-child(3){padding-left:12vw}
-  .stairs li:nth-child(4){padding-left:18vw}
 }
 /* phone */
 @media (max-width:560px){
   .nav{height:64px}
   :root{--s-hero:13.4vw}
-  .contact{font-size:16.5vw}
-  .quote{font-size:11.6vw}
   .nav .btn{padding:11px 16px}
   .trust{flex-direction:column;align-items:center;gap:10px}
-  .hero .btn{width:100%;max-width:360px}
-  .ptable td{padding:18px 0 18px 8px}
-  .ptable th{padding-left:8px}
-  .ptable td:first-child{padding-left:14px}
-  .ptable td:last-child{padding-right:14px}
-  .plan-row .btn{width:100%}
+  .hero .btn,.plan .btn,.close .btn{width:100%;max-width:400px}
+  .ptable td{padding:18px 4px}
+  .ptable th{padding:0 4px 12px}
   .seg{display:flex;width:100%}
   .seg label{flex:1;text-align:center;padding:12px 6px}
-  .quote .ln{flex-wrap:wrap}
-  .quote-by{justify-content:flex-start;gap:12px}
-  .quote-by span:nth-child(2){display:none}
+  .bars{grid-template-columns:1fr;gap:12px}
+  .rows li{padding:18px 18px;gap:12px}
+  .soon li{flex-direction:column;align-items:center;text-align:center;gap:4px}
+  .soon .s{text-align:center}
+  .steps{grid-template-columns:1fr}
   .msg{grid-template-columns:36px 1fr;padding:14px}
   .av{width:36px;height:36px;font-size:var(--s-small)}
-  .soon li{flex-direction:column;gap:4px}
-  .soon .s{text-align:left}
   summary{padding:18px 16px}
   details .ans{padding:0 16px 20px}
-  .close-mid{grid-template-columns:1fr}
-  .close-top span{display:none}
-  .close .btn{width:100%}
-  .meta{flex-direction:column}
+  .offer{font-size:10.4vw}
+  .offer br{display:none}
+  .contact{font-size:16vw}
+  .contact span{display:block}
+  .meta{flex-direction:column;align-items:center}
 }
 </style>
 <script>document.documentElement.classList.add('js')</script>
@@ -313,45 +275,36 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 <main>
   <section class="frame sec" id="prices" style="padding-top:0">
     <h2 class="rv">Tired of <span class="x">Higgsfield</span><br> prices?</h2>
-    <div class="split" style="margin-top:clamp(32px,4vw,56px)">
-      <div class="l">
-        <p class="lead rv">Same Seedance 2.5 model. Up to 66% cheaper.</p>
-        <p class="rv" style="margin-top:18px;color:var(--soft)">Every price is for one 30-second clip. The more you make, the more you keep.</p>
-      </div>
-      <div class="r rv">
-        <table class="ptable">
-          <caption>Price per 30-second Seedance 2.5 clip</caption>
-          <thead><tr><th scope="col"><span class="vh">Quality</span></th><th scope="col">AI Silk Road</th><th scope="col">Higgsfield Ultra</th><th scope="col">You save</th></tr></thead>
-          <tbody>
-            <tr><td>480p</td><td class="us">$1.43</td><td class="them">$3.87</td><td class="save">63%</td></tr>
-            <tr><td>720p</td><td class="us">$3.10</td><td class="them">$9.03</td><td class="save">66%</td></tr>
-            <tr><td>1080p</td><td class="us">$7.63</td><td class="them">$20.64</td><td class="save">63%</td></tr>
-          </tbody>
-        </table>
-        <p class="small ptable-note">Crossed-out prices are Higgsfield Ultra.</p>
-      </div>
+    <p class="lead rv">Same Seedance 2.5 model. Up to 66% cheaper.</p>
+    <div class="col sec-body rv">
+      <table class="ptable">
+        <caption>Price per 30-second Seedance 2.5 clip</caption>
+        <thead><tr><th scope="col">Quality</th><th scope="col">AI Silk Road</th><th scope="col">Higgsfield Ultra</th><th scope="col">You save</th></tr></thead>
+        <tbody>
+          <tr><td>480p</td><td class="us">$1.43</td><td class="them">$3.87</td><td class="save">63%</td></tr>
+          <tr><td>720p</td><td class="us">$3.10</td><td class="them">$9.03</td><td class="save">66%</td></tr>
+          <tr><td>1080p</td><td class="us">$7.63</td><td class="them">$20.64</td><td class="save">63%</td></tr>
+        </tbody>
+      </table>
+      <p class="small ptable-note">Crossed-out prices are Higgsfield Ultra.</p>
     </div>
   </section>
 
   <section class="plan" id="plan" aria-labelledby="plan-h">
     <div class="frame plan-in">
-      <h2 class="offer rv" id="plan-h">39,000 credits, one month: <span class="price-block">$109</span></h2>
-      <div class="plan-row rv">
-        <p>No auto-renew. Paid once with Revolut or USDT, delivered in minutes, covered by a 10-day warranty.</p>
-        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Get it on Discord</a>
-      </div>
+      <h2 class="offer rv" id="plan-h">39,000 credits, one month:<br> <span class="price-block">$109</span></h2>
+      <p class="lead rv">No auto-renew. Paid once with Revolut or USDT, delivered in minutes, covered by a 10-day warranty.</p>
+      <a class="btn rv" href="https://discord.gg/V8RQE7hUBn">Get it on Discord</a>
 
-      <div class="calc" data-ui>
-        <div class="calc-l rv">
-          <h3>What $109 gets you</h3>
-          <p>Pick a quality and compare how many 30-second Seedance 2.5 clips the same money buys.</p>
-          <div class="seg" role="radiogroup" aria-label="Video quality">
-            <input type="radio" name="q" id="q480" value="480"><label for="q480">480p</label>
-            <input type="radio" name="q" id="q720" value="720" checked><label for="q720">720p</label>
-            <input type="radio" name="q" id="q1080" value="1080"><label for="q1080">1080p</label>
-          </div>
+      <div class="calc col" data-ui>
+        <h3 class="rv">What $109 gets you</h3>
+        <p class="rv">Pick a quality and compare how many 30-second Seedance 2.5 clips the same money buys.</p>
+        <div class="seg rv" role="radiogroup" aria-label="Video quality">
+          <input type="radio" name="q" id="q480" value="480"><label for="q480">480p</label>
+          <input type="radio" name="q" id="q720" value="720" checked><label for="q720">720p</label>
+          <input type="radio" name="q" id="q1080" value="1080"><label for="q1080">1080p</label>
         </div>
-        <div class="calc-r rv" aria-live="polite">
+        <div class="bars rv" aria-live="polite">
           <div class="bar us-bar">
             <div class="bar-top"><b id="usN">35</b><span>clips with AI Silk Road</span></div>
             <div class="tiles" id="usT"></div>
@@ -360,33 +313,28 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
             <div class="bar-top"><b id="themN">12</b><span>clips on Higgsfield Ultra</span></div>
             <div class="tiles" id="themT"></div>
           </div>
-          <p class="small calc-note">Worked out from the per-clip prices above, rounded down.</p>
         </div>
+        <p class="small calc-note rv">Worked out from the per-clip prices above, rounded down.</p>
       </div>
     </div>
   </section>
 
   <section class="frame sec" id="models">
-    <div class="models-head split">
-      <div class="l"><h2 class="rv">What you get</h2></div>
-      <div class="r"><p class="lead rv">The same top video and image models you know from CapCut AI, in one place.</p></div>
-    </div>
-    <ul class="models">
-      <li class="rv"><span class="kind">Video</span><span class="mname">Seedance 2.5</span><span class="what">Text or images to video, 480p to 1080p.</span><span class="ok">Available</span></li>
-      <li class="rv"><span class="kind">Video</span><span class="mname">Veo 3</span><span class="what">Google's video model, with sound.</span><span class="ok">Available</span></li>
-      <li class="rv"><span class="kind">Video</span><span class="mname">Omni Flash</span><span class="what">Fast video generation.</span><span class="ok">Available</span></li>
-      <li class="rv"><span class="kind">Image</span><span class="mname">Nano Banana Pro</span><span class="what">Google's image model for creating and editing.</span><span class="ok">Available</span></li>
-      <li class="rv"><span class="kind">Image</span><span class="mname">ChatGPT Images 2.5</span><span class="what">OpenAI's newest image model.</span><span class="ok">Available</span></li>
+    <h2 class="rv">What you get</h2>
+    <p class="lead rv">The same top video and image models you know from CapCut AI, in one place.</p>
+    <ul class="rows models col sec-body">
+      <li class="rv"><div><span class="t">Seedance 2.5</span><span class="d">Video · Text or images to video, 480p to 1080p.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><div><span class="t">Veo 3</span><span class="d">Video · Google's video model, with sound.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><div><span class="t">Omni Flash</span><span class="d">Video · Fast video generation.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><div><span class="t">Nano Banana Pro</span><span class="d">Image · Google's image model for creating and editing.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><div><span class="t">ChatGPT Images 2.5</span><span class="d">Image · OpenAI's newest image model.</span></div><span class="ok">Available</span></li>
     </ul>
   </section>
 
   <section class="frame sec" id="reviews" aria-labelledby="rev-h">
     <h2 class="rv" id="rev-h">What our members say</h2>
-    <blockquote class="quote rv" style="margin-top:clamp(40px,5vw,72px)">
-      <div class="ln"><span>“Rapid</span><span>response,</span></div>
-      <div class="ln"><span>will buy</span><span>again.”</span></div>
-    </blockquote>
-    <div class="quote-by rv"><b>Jack H.</b><span>Member review</span><span>28 Oct 2026</span></div>
+    <blockquote class="quote rv sec-body">“Rapid response,<br> will buy again.”</blockquote>
+    <p class="quote-by rv"><b>Jack H.</b> · 28 Oct 2026</p>
 
     <div class="chan rv" data-ui>
       <div class="chan-h"><span>#</span><b>reviews</b><span>· AI Silk Road Discord</span></div>
@@ -404,54 +352,46 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
   <section class="frame sec" id="how">
     <h2 class="rv">How it works?</h2>
-    <ol class="stairs">
-      <li class="rv"><h3>First, join the Discord.</h3><p>Free to join. Browse what's available and ask anything.</p></li>
-      <li class="rv"><h3>Then open a ticket.</h3><p>Tell us what you need in a private ticket.</p></li>
-      <li class="rv"><h3>Pay with Revolut or USDT.</h3><p>Payment is handled inside your ticket.</p></li>
-      <li class="rv"><h3>Start creating in minutes.</h3><p>Your account is delivered in minutes, with a 10-day warranty.</p></li>
+    <ol class="steps sec-body">
+      <li class="rv"><h3>Join the Discord</h3><p>Free to join. Browse what's available and ask anything.</p></li>
+      <li class="rv"><h3>Open a ticket</h3><p>Tell us what you need in a private ticket.</p></li>
+      <li class="rv"><h3>Pay with Revolut or USDT</h3><p>Payment is handled inside your ticket.</p></li>
+      <li class="rv"><h3>Start creating</h3><p>Your account is delivered in minutes, with a 10-day warranty.</p></li>
     </ol>
   </section>
 
   <section class="frame sec" id="soon">
-    <div class="split">
-      <div class="l sec-head">
-        <h2 class="rv">Coming soon!!!</h2>
-        <p class="lead rv">We keep adding what the community asks for.</p>
-      </div>
-      <ul class="r soon">
-        <li class="next rv"><span class="t">TikTok Shop accounts</span><span class="s">Next up</span></li>
-        <li class="rv"><span class="t">Leonardo AI</span><span class="s">Image generation</span></li>
-        <li class="rv"><span class="t">Higgsfield AI</span><span class="s">Alternative access</span></li>
-        <li class="rv"><span class="t">ChatGPT Plus</span><span class="s">Accounts</span></li>
-      </ul>
-    </div>
+    <h2 class="rv">Coming soon!!!</h2>
+    <p class="lead rv">We keep adding what the community asks for.</p>
+    <ul class="rows soon col sec-body">
+      <li class="next rv"><span class="t">TikTok Shop accounts</span><span class="s">Next up</span></li>
+      <li class="rv"><span class="t">Leonardo AI</span><span class="s">Image generation</span></li>
+      <li class="rv"><span class="t">Higgsfield AI</span><span class="s">Alternative access</span></li>
+      <li class="rv"><span class="t">ChatGPT Plus</span><span class="s">Accounts</span></li>
+    </ul>
   </section>
 
   <section class="frame sec" id="faq">
     <h2 class="rv">Questions people ask</h2>
-    <div class="faq">
-      <div class="faq-list">
-        <details class="rv"><summary>Is this legit?</summary><p class="ans">Yes. You get a working account with credits, delivered after payment, with a 10-day warranty. If something is wrong, the team fixes or replaces it in your Discord ticket.</p></details>
-        <details class="rv"><summary>Why is it cheaper than Higgsfield?</summary><p class="ans">Higgsfield wraps the model in its own credit pricing. We give you access to the same Seedance 2.5 model at a lower price per clip.</p></details>
-        <details class="rv"><summary>What can I create?</summary><p class="ans">The same things you can create in CapCut AI. Video: text-to-video and image-to-video with Seedance 2.5, Veo 3 and Omni Flash, with reference images, video and audio, from 480p up to 1080p, clips up to 30 seconds. Images: text-to-image, editing and restyling with Nano Banana Pro and ChatGPT Images 2.5.</p></details>
-        <details class="rv"><summary>How fast is delivery?</summary><p class="ans">Minutes after payment. Your account details arrive in your private Discord ticket.</p></details>
-        <details class="rv"><summary>What if I run out of credits?</summary><p class="ans">Get another account whenever you need it. No monthly plan, no auto-renew.</p></details>
-        <details class="rv"><summary>How do I pay?</summary><p class="ans">Revolut or USDT, handled in a private ticket in the Discord.</p></details>
-      </div>
+    <div class="faq col sec-body">
+      <details class="rv"><summary>Is this legit?</summary><p class="ans">Yes. You get a working account with credits, delivered after payment, with a 10-day warranty. If something is wrong, the team fixes or replaces it in your Discord ticket.</p></details>
+      <details class="rv"><summary>Why is it cheaper than Higgsfield?</summary><p class="ans">Higgsfield wraps the model in its own credit pricing. We give you access to the same Seedance 2.5 model at a lower price per clip.</p></details>
+      <details class="rv"><summary>What can I create?</summary><p class="ans">The same things you can create in CapCut AI. Video: text-to-video and image-to-video with Seedance 2.5, Veo 3 and Omni Flash, with reference images, video and audio, from 480p up to 1080p, clips up to 30 seconds. Images: text-to-image, editing and restyling with Nano Banana Pro and ChatGPT Images 2.5.</p></details>
+      <details class="rv"><summary>How fast is delivery?</summary><p class="ans">Minutes after payment. Your account details arrive in your private Discord ticket.</p></details>
+      <details class="rv"><summary>What if I run out of credits?</summary><p class="ans">Get another account whenever you need it. No monthly plan, no auto-renew.</p></details>
+      <details class="rv"><summary>How do I pay?</summary><p class="ans">Revolut or USDT, handled in a private ticket in the Discord.</p></details>
     </div>
   </section>
 </main>
 
 <footer class="close" aria-labelledby="close-h">
   <div class="frame">
-    <div class="close-top"><span>AI Silk Road · AI tools &amp; accounts, sold in our Discord</span><a href="#top">Back to top ↑</a></div>
-    <div class="close-mid rv">
-      <img src="camel-walk.webp" alt="AI Silk Road camel" width="260" height="195" loading="lazy">
-      <div><h2 id="close-h">Ready to save on AI?</h2><p>Join 200+ members, brands &amp; creators.</p></div>
-    </div>
+    <img class="rv" src="camel-walk.webp" alt="AI Silk Road camel" width="260" height="195" loading="lazy">
+    <h2 class="rv" id="close-h">Ready to save on AI?</h2>
+    <p class="rv">Join 200+ members, brands &amp; creators.</p>
     <a class="contact rv" href="https://discord.gg/V8RQE7hUBn"><span>discord.gg/</span><span>aisilkroad</span></a>
     <a class="btn light rv" href="https://discord.gg/V8RQE7hUBn">Join our Discord</a>
-    <div class="meta"><span><a href="https://discord.gg/V8RQE7hUBn">Discord</a> · <a href="https://www.threads.com/@ai_sroad">Threads @ai_sroad</a></span><span>© 2026 AI Silk Road</span><span>Revolut or USDT</span></div>
+    <div class="meta"><a href="https://discord.gg/V8RQE7hUBn">Discord</a><a href="https://www.threads.com/@ai_sroad">Threads @ai_sroad</a><span>Revolut or USDT</span><span>© 2026 AI Silk Road</span><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
 
@@ -471,7 +411,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
   var els=document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
-    if(e.target.closest('.calc')&&!e.target.dataset.done){e.target.dataset.done=1;var c=document.querySelector('.seg input:checked');render(c?c.value:720,true)}}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    if(e.target.classList.contains('bars')){var c=document.querySelector('.seg input:checked');render(c?c.value:720,true)}}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
