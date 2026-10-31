@@ -233,6 +233,11 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 .hero .live{margin-top:18px;font-size:var(--s-small);color:var(--dim)}
 .wm{font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.02em;font-size:19px}
 @media (max-width:560px){.hero{min-height:calc(100svh - 64px);padding-bottom:56px}.hero .btn{width:100%;max-width:400px}}
+.hero h1 .sheen{display:inline-block;color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .sheen{background:linear-gradient(105deg,var(--accent) 0 44%,#fff 50%,var(--accent) 56% 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 1.5s cubic-bezier(.23,1,.32,1) 650ms both}
+  @keyframes sheen{0%{background-position:100% 0;filter:drop-shadow(0 0 0 rgba(143,211,255,0))}35%{filter:drop-shadow(0 0 22px rgba(143,211,255,.6))}100%{background-position:0% 0;filter:drop-shadow(0 0 0 rgba(143,211,255,0))}}
+}
 
 /* motion: entrances only when motion is welcome; content stays visible if script fails */
 @media (prefers-reduced-motion:no-preference){
@@ -303,7 +308,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
   <header class="hero" id="top">
     <span class="camel hero-camel h-in" style="--i:0" aria-hidden="true"><img class="hd" src="camel-head.webp" alt=""><img src="camel-base.webp" alt=""></span>
-    <h1 class="h-in" style="--i:1">AI Silk Road</h1>
+    <h1 class="h-in" style="--i:1"><span class="sheen">AI Silk Road</span></h1>
     <p class="sub h-in" style="--i:2">The cheapest way to use Seedance 2.5, Veo 3 and the best AI models. Delivered in minutes.</p>
     <a class="btn h-in" style="--i:3" href="https://discord.gg/V8RQE7hUBn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Join our Discord</a>
     <p class="live h-in" style="--i:4" id="live">200+ members · 10-day warranty</p>
