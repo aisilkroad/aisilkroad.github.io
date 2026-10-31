@@ -207,7 +207,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
 /* ticker of available models (constant motion = linear) */
 .ticker{overflow:hidden;background:var(--tone);padding:clamp(18px,2.2vw,28px) 0}
-.ticker-track{display:flex;width:max-content;animation:ticker 36s linear infinite}
+.ticker-track{display:flex;width:max-content;animation:ticker 90s linear infinite}
 .ticker ul{display:flex;list-style:none;margin:0;padding:0}
 .ticker li{display:flex;align-items:center;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--s-sub);line-height:1;color:var(--accent);white-space:nowrap}
 .ticker li::after{content:"";width:.22em;height:.22em;border-radius:50%;background:var(--soft);opacity:.5;margin:0 .7em}
@@ -241,7 +241,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
   details[open] .ans{animation:none}
   .ticker-track{animation:none;width:auto;justify-content:center}
   .ticker ul{flex-wrap:wrap;justify-content:center;row-gap:10px}
-  .ticker ul[aria-hidden]{display:none}
+  .ticker ul[aria-hidden],.ticker li[aria-hidden]{display:none}
   .trust li.live::before{animation:none}
   .stick{transition:none}
 }
@@ -310,8 +310,8 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
 <div class="ticker" aria-label="Models available now">
   <div class="ticker-track">
-    <ul><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li></ul>
-    <ul aria-hidden="true"><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li></ul>
+    <ul><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li><li aria-hidden="true">Seedance 2.5</li><li aria-hidden="true">Veo 3</li><li aria-hidden="true">Omni Flash</li><li aria-hidden="true">Nano Banana Pro</li><li aria-hidden="true">ChatGPT Images 2.5</li><li aria-hidden="true">Seedance 2.5</li><li aria-hidden="true">Veo 3</li><li aria-hidden="true">Omni Flash</li><li aria-hidden="true">Nano Banana Pro</li><li aria-hidden="true">ChatGPT Images 2.5</li></ul>
+    <ul aria-hidden="true"><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li><li>Seedance 2.5</li><li>Veo 3</li><li>Omni Flash</li><li>Nano Banana Pro</li><li>ChatGPT Images 2.5</li></ul>
   </div>
 </div>
 
