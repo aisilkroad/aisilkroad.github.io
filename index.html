@@ -225,27 +225,36 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
 /* hero v2: one thing per screen */
 .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100svh - 76px);padding:24px 0 72px}
-.hero-camel{width:clamp(150px,19vw,250px);margin-bottom:clamp(14px,2vw,26px)}
-.hero h1{font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:700;text-transform:none;letter-spacing:-.045em;line-height:.95;font-size:clamp(52px,9vw,124px);color:var(--accent)}
+.hero-camel{width:clamp(190px,24vw,320px);margin-bottom:clamp(14px,2vw,26px)}
+.hero h1{font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:700;text-transform:none;letter-spacing:-.045em;line-height:.95;font-size:clamp(56px,10.5vw,148px);color:var(--accent)}
 .hero .sub{font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:500;font-size:clamp(22px,1rem + 1.4vw,34px);letter-spacing:-.02em;color:var(--soft);margin-top:clamp(14px,1.8vw,22px);line-height:1.2}
 .hero .btn,.nav .btn{border-radius:10px}
 .hero .btn{margin-top:clamp(26px,3.6vw,40px)}
-.hero .live{margin-top:18px;font-size:var(--s-small);color:var(--dim)}
+.hero .live{margin-top:20px;font-size:var(--s-body);color:var(--soft);max-width:30em}
 .wm{font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.02em;font-size:19px}
 @media (max-width:560px){.hero{min-height:calc(100svh - 64px);padding-bottom:56px}.hero .btn{width:100%;max-width:400px}}
 .hero h1 .sheen{display:inline-block;color:var(--accent)}
 @media (prefers-reduced-motion:no-preference){
-  .hero h1 .sheen{background:linear-gradient(105deg,var(--accent) 0 44%,#fff 50%,var(--accent) 56% 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 1.5s cubic-bezier(.23,1,.32,1) 650ms both}
+  .hero h1 .sheen{background:linear-gradient(105deg,var(--accent) 0 44%,#fff 50%,var(--accent) 56% 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 1.5s cubic-bezier(.23,1,.32,1) 1150ms both}
   @keyframes sheen{0%{background-position:100% 0;filter:drop-shadow(0 0 0 rgba(143,211,255,0))}35%{filter:drop-shadow(0 0 22px rgba(143,211,255,.6))}100%{background-position:0% 0;filter:drop-shadow(0 0 0 rgba(143,211,255,0))}}
 }
 .hero-camel{margin-top:clamp(56px,7vw,84px);overflow:visible}
 .bubble{position:absolute;left:-6%;bottom:103%;transform-origin:8% 115%;white-space:nowrap;background:#fff;color:var(--bg);font-family:"Inter Tight","Inter Display",Inter,system-ui,sans-serif;font-weight:500;font-size:clamp(17px,1rem + .6vw,24px);letter-spacing:-.01em;line-height:1;padding:.7em 1em;border-radius:1.1em;}
 .bubble::after{content:"";position:absolute;left:12%;top:100%;width:0;height:0;border:9px solid transparent;border-top-color:#fff;border-bottom:0;border-left-width:4px;transform:skewX(-20deg)}
 @media (prefers-reduced-motion:no-preference){
-  .bubble{opacity:0;transform:scale(.9) translateY(6px);animation:pop 420ms cubic-bezier(.23,1,.32,1) 2300ms forwards}
+  .bubble{opacity:0;transform:scale(.9) translateY(6px);animation:pop 420ms cubic-bezier(.23,1,.32,1) 2500ms forwards}
   @keyframes pop{to{opacity:1;transform:none}}
 }
 @media (max-width:560px){.bubble{left:-10%;font-size:17px}}
+.half{position:absolute;inset:0}
+.half img{position:absolute;inset:0;width:100%;height:100%}
+@media (prefers-reduced-motion:no-preference){
+  .half.front{animation:joinL 1100ms cubic-bezier(.23,1,.32,1) 150ms both}
+  .half.back{animation:joinR 1100ms cubic-bezier(.23,1,.32,1) 150ms both}
+  @keyframes joinL{from{opacity:0;transform:translateX(-45%)}}
+  @keyframes joinR{from{opacity:0;transform:translateX(45%)}}
+  .hero .camel .hd{animation-delay:1.4s}
+}
 
 /* motion: entrances only when motion is welcome; content stays visible if script fails */
 @media (prefers-reduced-motion:no-preference){
@@ -315,10 +324,10 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
   </nav>
 
   <header class="hero" id="top">
-    <span class="camel hero-camel h-in" style="--i:0"><img class="hd" src="camel-head.webp" alt=""><img src="camel-base.webp" alt=""><span class="bubble">Ready to save on AI?</span></span>
+    <span class="camel hero-camel"><span class="half back"><img src="camel-back.webp" alt=""></span><span class="half front"><img class="hd" src="camel-head.webp" alt=""><img src="camel-front.webp" alt=""></span><span class="bubble">Ready to save on AI?</span></span>
     <h1 class="h-in" style="--i:1"><span class="sheen">AI Silk Road</span></h1>
     <a class="btn h-in" style="--i:3" href="https://discord.gg/V8RQE7hUBn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Join our Discord</a>
-    <p class="live h-in" style="--i:4" id="live">200+ members · 10-day warranty</p>
+    <p class="live h-in" style="--i:4">The fastest-growing AI community. Trusted by <span id="live">200+</span> members, brands &amp; creators.</p>
   </header>
 </div>
 
@@ -463,7 +472,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
   // live member count from the public Discord invite (falls back to 200+)
   try{fetch('https://discord.com/api/v10/invites/V8RQE7hUBn?with_counts=true').then(function(r){return r.ok?r.json():null}).then(function(j){
     if(!j||!j.approximate_member_count||j.approximate_member_count<200)return;
-    document.getElementById('live').textContent=j.approximate_member_count+' members · '+j.approximate_presence_count+' online now · 10-day warranty';
+    document.getElementById('live').textContent=j.approximate_member_count+'+';
   }).catch(function(){})}catch(e){}
 
   // sticky join bar on phones: after the hero, hidden over the footer
