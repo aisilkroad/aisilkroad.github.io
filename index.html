@@ -189,14 +189,15 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){details:not([open]):hover{background:var(--tone2)}}
 
 /* close */
-.close{background:var(--close);margin-top:clamp(96px,11vw,160px);padding:clamp(64px,8vw,112px) 0 32px;color:#fff;text-align:center}
-.close .holo-v{display:block;width:clamp(170px,18vw,260px);height:auto;margin:0 auto 10px;mix-blend-mode:screen}
+.close{background:var(--close);margin-top:clamp(96px,11vw,160px);padding:clamp(72px,9vw,120px) 0 clamp(40px,5vw,64px);color:#fff;text-align:center}
+.close .frame{display:flex;flex-direction:column;align-items:center}
+.close .holo-v{display:block;width:clamp(190px,20vw,290px);height:auto;margin:0 auto 24px;mix-blend-mode:screen;object-fit:cover;object-position:52% 50%}
 .close h2{font-size:var(--s-head)}
 .close h2 + p{margin-top:14px;color:#d9ddff;font-size:var(--s-lead)}
 .contact{display:block;margin-top:clamp(36px,5vw,64px);font-family:var(--display);font-weight:700;text-transform:lowercase;font-size:clamp(46px,9vw,150px);line-height:.9;letter-spacing:-.01em;text-decoration:none}
 .contact span{display:inline-block}
 .close .btn{margin-top:36px}
-.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(56px,8vw,96px);font-size:var(--s-small);color:#d9ddff}
+.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(56px,7vw,88px);font-size:var(--s-small);color:#d9ddff}
 .meta a{text-decoration:none}
 @media (hover:hover) and (pointer:fine){.meta a:hover{color:#fff;text-decoration:underline}}
 
@@ -414,7 +415,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 
 <section class="frame sec" id="soon">
     <h2 class="rv">Coming soon!!!</h2>
-    <p class="lead rv">Next on the Silk Road.</p>
+    <p class="lead rv">Next on AI Silk Road.</p>
     <ul class="rows soon col sec-body">
       <li class="next rv"><span class="t">TikTok accounts</span><span class="s">Next up</span></li>
     </ul>
@@ -457,7 +458,7 @@ details[open] .ans{animation:ans 260ms var(--ease-out)}
 <footer class="close" aria-labelledby="close-h">
   <div class="frame">
     <video class="holo-v rv" src="camel-glitch.mp4" autoplay muted loop playsinline preload="metadata" poster="camel-full.webp" aria-label="AI Silk Road hologram camel"></video>
-    <h2 class="rv" id="close-h">See you on the Silk Road.</h2>
+    <h2 class="rv" id="close-h">See you on AI Silk Road.</h2>
     <p class="rv">The fastest-growing AI community &amp; marketplace.</p>
     <a class="contact rv" href="https://discord.gg/V8RQE7hUBn"><span>discord.gg/</span><span>aisilkroad</span></a>
     <div class="meta"><a href="https://discord.gg/V8RQE7hUBn">Discord</a><a href="https://www.threads.com/@ai_sroad">Threads @ai_sroad</a><span>Revolut or USDT</span><span>© 2026 AI Silk Road</span><a href="#top">Back to top ↑</a></div>
