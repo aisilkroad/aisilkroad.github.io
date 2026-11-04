@@ -336,47 +336,7 @@ h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:none;letter-s
 .close{background:radial-gradient(60% 55% at 50% 22%,rgba(143,211,255,.16),transparent 70%),#060a12;border-top:1px solid var(--line)}
 .close h2 + p,.meta{color:var(--soft)}
 .calc-money .keep{color:var(--accent)}
-/* hero with receipts */
-.hero2{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(20px,5vh,64px) 0 clamp(56px,9vh,110px)}
-.hero2::before{content:"";position:absolute;left:50%;top:30%;width:min(1000px,100%);height:70%;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(143,211,255,.16),transparent 70%);pointer-events:none;z-index:-1}
-.hero2 h1{font-size:clamp(40px,6.6vw,96px);letter-spacing:-.05em;line-height:.98;color:var(--ink);max-width:11em}
-.hero2 h1 em{font-style:normal;color:var(--accent)}
-.rc-wrap{display:flex;justify-content:center;align-items:flex-start;gap:clamp(10px,3vw,44px);margin-top:clamp(26px,4vw,52px)}
-.rc{position:relative;width:clamp(160px,21vw,290px);background:#f4f2ec;color:#2b2b2b;padding:clamp(14px,1.5vw,24px) clamp(12px,1.4vw,22px) clamp(16px,1.6vw,26px);font-family:"JetBrains Mono",ui-monospace,monospace;font-size:clamp(10px,.85vw,13px);font-weight:500;letter-spacing:.02em;text-align:left;box-shadow:0 30px 60px rgba(0,0,0,.55),0 8px 18px rgba(0,0,0,.4)}
-.rc::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:11px;background:linear-gradient(135deg,#f4f2ec 50%,transparent 50%) 0 0/14px 11px repeat-x,linear-gradient(225deg,#f4f2ec 50%,transparent 50%) 0 0/14px 11px repeat-x}
-.rc.them{transform:rotate(-4deg);margin-top:clamp(12px,2vw,26px)}
-.rc.us{transform:rotate(3deg)}
-.rc-h{text-align:center;font-weight:800;letter-spacing:.18em;color:#1b1b1b;padding-bottom:.9em;border-bottom:2px dashed rgba(0,0,0,.25)}
-.rc-t{font-family:var(--display);font-weight:800;letter-spacing:-.04em;color:#111;font-size:clamp(20px,2.1vw,32px);text-align:center;padding:.45em 0;border-bottom:2px dashed rgba(0,0,0,.25)}
-.rc-r{display:flex;justify-content:space-between;gap:6px;margin-top:.8em;color:#5a5a55}
-.rc-r b{color:#111;font-weight:800}
-.hl{padding:0 .3em;border-radius:3px;color:#0b0b0b !important}
-.hl.lime{background:#D7FB4F}.hl.blue{background:var(--accent)}
-.rc-tot{display:flex;justify-content:space-between;align-items:center;margin-top:1em;padding-top:.9em;border-top:2px dashed rgba(0,0,0,.25);color:#111;font-weight:800;letter-spacing:.1em}
-.rc-tot b{font-family:var(--display);font-weight:800;letter-spacing:-.05em;font-size:clamp(28px,3.2vw,52px);line-height:1;color:#111}
-.rc-tot .strike{position:relative;color:#8a8a84}
-.rc-tot .strike::after{content:"";position:absolute;left:-6%;right:-6%;top:50%;height:.09em;background:var(--red);transform:rotate(-8deg)}
-.rc-tot .big{padding:.04em .16em;border-radius:6px}
-.rc-bar{margin:1.1em auto 0;height:clamp(24px,2.6vw,40px);width:88%;background:repeating-linear-gradient(90deg,#111 0 2px,transparent 2px 5px,#111 5px 6px,transparent 6px 9px,#111 9px 12px,transparent 12px 14px)}
-.rc-tag{position:absolute;right:-10px;top:-16px;z-index:2;background:var(--red);color:#fff;font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:clamp(11px,1vw,15px);padding:.55em .9em;border-radius:999px;transform:rotate(6deg);box-shadow:0 10px 24px rgba(0,0,0,.45);white-space:nowrap}
-.rc-tag b{font-size:1.35em}
-.rc-note{margin-top:clamp(22px,2.6vw,30px);font-size:var(--s-small);color:var(--dim)}
-.hero2 .btn{margin-top:clamp(18px,2.4vw,28px);padding:20px 40px}
-.hero-meta{margin-top:16px;color:var(--ink);font-size:var(--s-body)}
-.hero-meta b{color:var(--accent)}
-.hero2 .live{margin-top:6px;color:var(--soft);font-size:var(--s-small)}
-@media (prefers-reduced-motion:no-preference){
-  .rc{animation:print 900ms steps(9) both}
-  .rc.us{animation-delay:500ms}
-  @keyframes print{from{clip-path:inset(0 -40px 100% -40px)}to{clip-path:inset(-40px -40px -20px -40px)}}
-  .rc-tag{animation:tag 420ms cubic-bezier(.23,1,.32,1) 1500ms both}
-  @keyframes tag{from{opacity:0;transform:rotate(-14deg) scale(.4)}to{opacity:1;transform:rotate(6deg) scale(1)}}
-}
 @media (max-width:560px){
-  .hero2 h1{font-size:9.4vw;max-width:none}
-  .rc{width:44vw}
-  .rc-wrap{gap:3vw}
-  .hero2 .btn{width:100%;max-width:400px}
   .film{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
 }
 html,body{overflow-x:clip}
@@ -399,31 +359,11 @@ html,body{overflow-x:clip}
     </ul>
   </nav>
 
-  <header class="hero2" id="top">
-    <h1 class="h-in" style="--i:1">Same Seedance 2.5.<br><em>A third of the price.</em></h1>
-    <div class="rc-wrap h-in" style="--i:2" aria-label="Price per 30-second Seedance 2.5 clip">
-      <div class="rc them">
-        <div class="rc-h">★ RECEIPT ★</div>
-        <div class="rc-t">Seedance 2.5</div>
-        <div class="rc-r"><span>PROVIDER</span><b class="hl lime">HIGGSFIELD</b></div>
-        <div class="rc-r"><span>CLIP</span><b>30 SEC</b></div>
-        <div class="rc-tot"><span>TOTAL</span><b class="strike">$3.87</b></div>
-        <div class="rc-bar"></div>
-      </div>
-      <div class="rc us">
-        <span class="rc-tag">SAVE UP TO <b>66%</b></span>
-        <div class="rc-h">★ RECEIPT ★</div>
-        <div class="rc-t">Seedance 2.5</div>
-        <div class="rc-r"><span>PROVIDER</span><b class="hl blue">AI SILK ROAD</b></div>
-        <div class="rc-r"><span>CLIP</span><b>30 SEC</b></div>
-        <div class="rc-tot"><span>TOTAL</span><b class="hl blue big">$1.43</b></div>
-        <div class="rc-bar"></div>
-      </div>
-    </div>
-    <p class="rc-note h-in" style="--i:3">Price per 30-second clip · same settings on both</p>
-    <a class="btn h-in" style="--i:4" href="https://discord.gg/V8RQE7hUBn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Join our Discord</a>
-    <p class="hero-meta h-in" style="--i:5"><b>$109</b> · 39,000 credits · No auto-renew · Warranty included</p>
-    <p class="live h-in" style="--i:6">Trusted by members, brands &amp; creators.</p>
+  <header class="hero" id="top">
+    <span class="camel hero-camel holo"><span class="half back"><img src="camel-back.webp" alt=""></span><span class="half front"><img src="camel-front.webp" alt=""></span></span>
+    <h1 class="h-in" style="--i:1"><span class="sheen">AI Silk Road</span></h1>
+    <a class="btn h-in" style="--i:3" href="https://discord.gg/V8RQE7hUBn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Join our Discord</a>
+    <p class="live h-in" style="--i:4">The fastest-growing AI marketplace. Trusted by members, brands &amp; creators.</p>
   </header>
 </div>
 
@@ -586,7 +526,7 @@ html,body{overflow-x:clip}
   var stick=document.getElementById('stick'),pastHero=false,atFoot=false;
   function upd(){stick.classList.toggle('on',pastHero&&!atFoot&&!atFilm)}
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;upd()}).observe(document.querySelector('.hero2 .btn'));
+    new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;upd()}).observe(document.querySelector('.hero .btn'));
     new IntersectionObserver(function(es){atFoot=es[0].isIntersecting;upd()}).observe(document.querySelector('.close'));
   }
 
