@@ -364,6 +364,57 @@ html,body{overflow-x:clip}
 /* desktop: use the width */
 .col{max-width:960px}
 @media (min-width:1100px){.msgs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ---- look v4: bold cards, hard shadows, marquee (ecom-tools inspired, our colours) ---- */
+:root{--edge:rgba(143,211,255,.26);--hard:rgba(143,211,255,.20)}
+body{background-image:radial-gradient(rgba(143,211,255,.075) 1px,transparent 1.3px);background-size:24px 24px}
+.hl{background:var(--accent);color:var(--bg);padding:0 .14em;border-radius:.14em;display:inline-block;transform:rotate(-1.5deg);line-height:1.08}
+.btn{border:2px solid #05080e;box-shadow:0 5px 0 #3a8fc4,0 14px 30px rgba(143,211,255,.18);transition:transform 140ms var(--ease-out),box-shadow 140ms var(--ease-out),background-color 200ms ease}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #3a8fc4}
+.nav .btn{box-shadow:0 3px 0 #3a8fc4}
+.stick .btn{box-shadow:0 5px 0 #3a8fc4,0 12px 32px rgba(0,0,0,.5)}
+.steps li,details,.chan,.bar,.rows li,.ptable{box-shadow:none;border:1.5px solid var(--edge)}
+.steps li,.chan,.rows li{box-shadow:5px 5px 0 var(--hard)}
+.ptable{border-collapse:separate;border-spacing:0;border-radius:16px;overflow:hidden;box-shadow:6px 6px 0 var(--hard)}
+.ptable thead th{background:var(--tone2);padding-top:14px}
+.ptable caption{background:transparent}
+.ptable tbody tr + tr td{border-top:1.5px solid var(--edge)}
+.ptable tbody tr + tr{border-top:0}
+.offer-card{border:2px solid var(--accent);box-shadow:8px 8px 0 var(--accent),0 30px 80px rgba(0,0,0,.45)}
+/* marquee */
+.mq{overflow:hidden;border-top:1.5px solid var(--edge);border-bottom:1.5px solid var(--edge);background:var(--tone);padding:16px 0;margin:0 0 clamp(28px,4vw,48px);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:14px;width:max-content}
+.mq-g{display:flex;gap:14px;flex:none}
+.mq span{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-family:var(--display);font-weight:700;font-size:clamp(17px,1rem + .4vw,22px);letter-spacing:-.02em;padding:9px 16px;border-radius:999px;background:var(--bg);border:1.5px solid var(--edge)}
+.mq span i{font-style:normal;font-family:var(--text);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--accent);padding:3px 8px;border-radius:99px}
+.mq span i.im{background:var(--neon)}
+@media (prefers-reduced-motion:no-preference){.mq-t{animation:mq 26s linear infinite}@keyframes mq{to{transform:translateX(calc(-50% - 7px))}}}
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1080px;margin:clamp(40px,5vw,64px) auto 0;padding:0;list-style:none}
+.facts li{background:var(--tone);border:1.5px solid var(--edge);border-radius:16px;padding:22px 12px;box-shadow:5px 5px 0 var(--hard);text-align:center}
+.facts b{display:block;font-family:var(--display);font-weight:800;letter-spacing:-.04em;font-size:clamp(34px,1rem + 2.4vw,56px);line-height:1;color:var(--accent)}
+.facts span{display:block;margin-top:8px;color:var(--soft);font-size:var(--s-small)}
+/* models as tool cards */
+.models{max-width:1080px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.models li{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:14px;padding:22px 20px;margin:0 !important;text-align:left}
+.models .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--accent);color:var(--bg);border:2px solid #05080e;box-shadow:3px 3px 0 var(--hard)}
+.models .ic.im{background:var(--neon)}
+.models .ic svg{width:22px;height:22px;fill:currentColor}
+.models .t{font-size:clamp(24px,1rem + .8vw,30px);color:var(--ink)}
+.models .d{font-size:var(--s-small);margin-top:6px}
+.models .ok{margin-top:auto}
+/* numbered steps */
+.steps{counter-reset:st}
+.steps li{position:relative;padding-top:64px;text-align:left}
+.steps li::before{counter-increment:st;content:counter(st);position:absolute;left:22px;top:20px;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:18px;background:var(--accent);color:var(--bg);border:2px solid #05080e}
+.steps h3{text-align:left}
+/* faq: plus icon */
+details{border-radius:14px}
+details[open]{box-shadow:5px 5px 0 var(--hard)}
+summary::after{content:"+";width:30px;height:30px;border:1.5px solid var(--edge);border-radius:50%;display:grid;place-items:center;font-family:var(--text);font-size:20px;font-weight:500;line-height:1;color:var(--soft);transform:none;transition:transform 220ms var(--ease-out),background-color 200ms ease}
+details[open] summary::after{transform:rotate(45deg);background:var(--accent);color:var(--bg);border-color:var(--accent)}
+@media (max-width:1000px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps li{padding-top:62px}.models{grid-template-columns:1fr}.models li{flex-direction:row;align-items:center;flex-wrap:wrap}.models li > div{flex:1;min-width:0}.models .ok{margin-top:0}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -395,6 +446,7 @@ html,body{overflow-x:clip}
   </header>
 </div>
 
+<div class="mq" aria-label="Models included: Seedance 2.5, Veo 3.1, Omni Flash, Nano Banana Pro, ChatGPT Images 2.5"><div class="mq-t"><div class="mq-g"><span>Seedance 2.5<i>Video</i></span><span>Veo 3.1<i>Video</i></span><span>Omni Flash<i>Video</i></span><span>Nano Banana Pro<i class="im">Image</i></span><span>ChatGPT Images 2.5<i class="im">Image</i></span><span>Seedance 2.5<i>Video</i></span><span>Veo 3.1<i>Video</i></span><span>Omni Flash<i>Video</i></span><span>Nano Banana Pro<i class="im">Image</i></span><span>ChatGPT Images 2.5<i class="im">Image</i></span></div><div class="mq-g" aria-hidden="true"><span>Seedance 2.5<i>Video</i></span><span>Veo 3.1<i>Video</i></span><span>Omni Flash<i>Video</i></span><span>Nano Banana Pro<i class="im">Image</i></span><span>ChatGPT Images 2.5<i class="im">Image</i></span><span>Seedance 2.5<i>Video</i></span><span>Veo 3.1<i>Video</i></span><span>Omni Flash<i>Video</i></span><span>Nano Banana Pro<i class="im">Image</i></span><span>ChatGPT Images 2.5<i class="im">Image</i></span></div></div></div>
 <section class="frame film" id="film" aria-label="AI Silk Road film">
   <div class="film-box rv">
     <video id="filmv" src="film.mp4" poster="film-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
@@ -403,8 +455,14 @@ html,body{overflow-x:clip}
 </section>
 
 <main>
+  <ul class="facts frame">
+    <li class="rv"><b>5</b><span>top AI models</span></li>
+    <li class="rv"><b>39,000</b><span>credits per account</span></li>
+    <li class="rv"><b>30-day</b><span>full warranty</span></li>
+    <li class="rv"><b>1 month</b><span>access, no auto-renew</span></li>
+  </ul>
   <section class="frame sec" id="prices">
-    <h2 class="rv">Pay less.<br> Generate more.</h2>
+    <h2 class="rv">Pay less.<br> <span class="hl">Generate more.</span></h2>
     <p class="lead rv">Same Seedance 2.5 model, up to 71% cheaper per clip than <span class="x">Higgsfield</span>.</p>
     <div class="col sec-body rv">
       <table class="ptable">
@@ -460,14 +518,14 @@ html,body{overflow-x:clip}
   </section>
 
   <section class="frame sec" id="models">
-    <h2 class="rv">What you get</h2>
+    <h2 class="rv">What you <span class="hl">get</span></h2>
     <p class="lead rv">All the top video and image models in one account.</p>
     <ul class="rows models col sec-body">
-      <li class="rv"><div><span class="t">Seedance 2.5</span><span class="d">Video · Text or images to video, 480p to 1080p.</span></div><span class="ok">Available</span></li>
-      <li class="rv"><div><span class="t">Veo 3.1</span><span class="d">Video · Google's video model, with sound.</span></div><span class="ok">Available</span></li>
-      <li class="rv"><div><span class="t">Omni Flash</span><span class="d">Video · Fast video generation.</span></div><span class="ok">Available</span></li>
-      <li class="rv"><div><span class="t">Nano Banana Pro</span><span class="d">Image · Google's image model for creating and editing.</span></div><span class="ok">Available</span></li>
-      <li class="rv"><div><span class="t">ChatGPT Images 2.5</span><span class="d">Image · OpenAI's newest image model.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><div><span class="t">Seedance 2.5</span><span class="d">Video · Text or images to video, 480p to 1080p.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><div><span class="t">Veo 3.1</span><span class="d">Video · Google's video model, with sound.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><div><span class="t">Omni Flash</span><span class="d">Video · Fast video generation.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><span class="ic im"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM6 17h12l-4-5.5-3 4-2-2.5z" fill-rule="evenodd"/></svg></span><div><span class="t">Nano Banana Pro</span><span class="d">Image · Google's image model for creating and editing.</span></div><span class="ok">Available</span></li>
+      <li class="rv"><span class="ic im"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM6 17h12l-4-5.5-3 4-2-2.5z" fill-rule="evenodd"/></svg></span><div><span class="t">ChatGPT Images 2.5</span><span class="d">Image · OpenAI's newest image model.</span></div><span class="ok">Available</span></li>
     </ul>
   </section>
 
@@ -479,7 +537,7 @@ html,body{overflow-x:clip}
 
   
 <section class="frame sec" id="how">
-    <h2 class="rv">How it works</h2>
+    <h2 class="rv">How it <span class="hl">works</span></h2>
     <ol class="steps sec-body">
       <li class="rv"><h3>Join the Discord</h3><p>Free to join. Browse what's available and ask anything.</p></li>
       <li class="rv"><h3>Open a private ticket</h3><p>Tell us what you need. Everything is handled in your ticket.</p></li>
