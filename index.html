@@ -504,8 +504,6 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
 @media (max-width:1000px){.orbit{display:none}}
 /* reveal with blur (brothas-style) */
 @media (prefers-reduced-motion:no-preference){
-  html.js .rv{filter:blur(6px)}
-  html.js .rv.in{filter:blur(0);transition:opacity 800ms var(--ease-out),transform 800ms var(--ease-out),filter 800ms var(--ease-out);transition-delay:calc(var(--i,0) * 75ms)}
 }
 /* UGC phones */
 .phones{display:flex;justify-content:center;align-items:flex-end;gap:clamp(10px,2vw,28px);margin:clamp(36px,4.5vw,64px) auto 0;perspective:1200px}
@@ -590,6 +588,8 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
 @keyframes fglitch{0%,100%{transform:none;clip-path:none}91%{transform:translateX(-6px);clip-path:inset(18% 0 58% 0)}92%{transform:translateX(5px);clip-path:inset(62% 0 8% 0)}93%{transform:none;clip-path:none}96%{transform:translateX(4px);clip-path:inset(30% 0 40% 0)}97%{transform:none;clip-path:none}}
 @media (prefers-reduced-motion:reduce){.close .holo-v{animation:none}}
 .ugc-cta{margin-top:clamp(56px,6vw,80px)}
+h2,.calc h3,.quote,.pname,.tag2{-webkit-font-smoothing:antialiased;backface-visibility:hidden}
+h2.plain{background:none;-webkit-text-fill-color:var(--ink);color:var(--ink)}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -632,7 +632,7 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
 
 <main>
   <section class="frame sec" id="prices">
-    <h2 class="rv">Same model.<br> <span class="hl">Lower price.</span></h2>
+    <h2 class="rv plain">Same model.<br> <span class="hl">Lower price.</span></h2>
     <p class="lead rv">Seedance 2.5, up to 71% cheaper per clip than <span class="x">Higgsfield</span>.</p>
     <div class="col sec-body rv">
       <table class="ptable">
@@ -650,7 +650,7 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
 
   <section class="plan" id="plan" aria-labelledby="plan-h">
     <div class="frame plan-in">
-      <h2 class="rv" id="plan-h">Pick your <span class="hl">account</span></h2>
+      <h2 class="rv plain" id="plan-h">Pick your <span class="hl">account</span></h2>
       <p class="lead rv">Small for a test run. Big for real work. Both are one-time, no subscription.</p>
       <div class="plans sec-body">
       <div class="offer-card rv main">
@@ -708,7 +708,7 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
   </section>
 
   <section class="frame sec" id="ugc">
-    <h2 class="rv">Want to make <span class="hl">AI UGC</span> videos?</h2>
+    <h2 class="rv plain">Want to make <span class="hl">AI UGC</span> videos?</h2>
     <div class="phones rv">
       <figure class="ph l"><video src="ugc-raw-web.mp4" muted loop playsinline preload="metadata" data-seek="0"></video><figcaption>Straight out of Seedance 2.5</figcaption></figure>
       <figure class="ph mid"><video src="ugc-web.mp4" poster="ugc-poster.jpg" muted loop playsinline preload="metadata"></video><figcaption>After a quick edit</figcaption></figure>
@@ -718,7 +718,7 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
   </section>
 
   <section class="frame sec" id="models">
-    <h2 class="rv"><span class="hl">What you get</span></h2>
+    <h2 class="rv plain"><span class="hl">What you get</span></h2>
     <p class="lead rv">All the top video and image models in one account.</p>
     <ul class="rows models col sec-body">
       <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><div><span class="t">Seedance 2.5</span><span class="d">Video · Text or images to video, 480p to 1080p.</span></div><span class="ok">Available</span></li>
@@ -737,7 +737,7 @@ h2 .hl{padding:.02em .16em .06em;margin:0}
 
   
 <section class="frame sec" id="how">
-    <h2 class="rv"><span class="hl">How it works</span></h2>
+    <h2 class="rv plain"><span class="hl">How it works</span></h2>
     <ol class="steps sec-body">
       <li class="rv"><h3>Join the Discord</h3><p>Free to join. Browse what's available and ask anything.</p></li>
       <li class="rv"><h3>Open a private ticket</h3><p>Tell us what you need. Everything is handled in your ticket.</p></li>
