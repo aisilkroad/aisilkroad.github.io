@@ -415,6 +415,125 @@ summary::after{content:"+";width:30px;height:30px;border:1.5px solid var(--edge)
 details[open] summary::after{transform:rotate(45deg);background:var(--accent);color:var(--bg);border-color:var(--accent)}
 @media (max-width:1000px){.facts{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.steps li{padding-top:62px}.models{grid-template-columns:1fr}.models li{flex-direction:row;align-items:center;flex-wrap:wrap}.models li > div{flex:1;min-width:0}.models .ok{margin-top:0}}
+
+/* ---- v5 theme: purple hologram, clean hairlines, brothas-style motion ---- */
+:root{--bg:#0b0614;--tone:#140b24;--tone2:#1d1033;--ink:#f4eefc;--soft:#bcaad8;--dim:#8d7cab;--accent:#d8b4fe;--accent2:#a855f7;--glow:rgba(168,85,247,.45);--edge:rgba(216,180,254,.16);--hard:transparent;--line:rgba(216,180,254,.10);--close:#0b0614}
+body{background:radial-gradient(70% 36% at 50% 0%,rgba(120,60,170,.45),transparent 70%),var(--bg)}
+::selection{background:var(--accent);color:var(--bg)}
+.sec::before{background:radial-gradient(50% 50% at 50% 50%,rgba(168,85,247,.12),transparent 70%)}
+h2,.calc h3,.quote{background:linear-gradient(180deg,#fff 25%,#c9b5ea 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hl,.price-block{background:var(--accent);color:var(--bg);-webkit-text-fill-color:var(--bg);-webkit-background-clip:border-box;background-clip:border-box;transform:rotate(-1.2deg)}
+/* buttons: light pill */
+.btn,.nav .btn,.stick .btn{background:linear-gradient(180deg,#ffffff,#e4d4fb);color:#1a0b2e;border:0;border-radius:999px;box-shadow:0 10px 34px var(--glow),inset 0 -2px 0 rgba(0,0,0,.08)}
+.btn:active{transform:scale(.97);box-shadow:0 4px 16px var(--glow)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:linear-gradient(180deg,#ffffff,#f0e6ff)}}
+.hero .btn,.nav .btn{border-radius:999px}
+/* cards: hairline, no hard shadows */
+.steps li,.chan,.rows li,.facts li,.ptable,details,.bar,.offer-card{box-shadow:none;border:1px solid var(--edge);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0)),var(--tone)}
+details[open]{box-shadow:none;background:var(--tone2)}
+.ptable thead th{background:var(--tone2)}
+.ptable tbody tr{background:transparent}
+.ptable tbody tr + tr td{border-top:1px solid var(--edge)}
+.ptable td.us{color:var(--accent);background:rgba(216,180,254,.07)}
+.ptable th:nth-child(2){color:var(--accent)}
+.models .ic{background:var(--accent);border:0;box-shadow:none}
+.models .ic.im{background:var(--neon)}
+.steps li::before{background:var(--accent);border:0}
+details[open] summary::after{background:var(--accent);border-color:var(--accent)}
+.mq{background:transparent;border-color:var(--edge)}
+.mq span{background:var(--tone);border-color:var(--edge)}
+.mq span i{background:var(--accent)}
+.mq span i.im{background:var(--neon)}
+.facts b{color:var(--accent)}
+.price-block{background:var(--accent)}
+.seg{background:var(--bg);border:1px solid var(--edge)}
+.seg input:checked + label{background:var(--accent)}
+.tiles i{background:var(--accent)}
+.them-bar .tiles i{background:#3b2a55}
+.us-bar .bar-top b{color:var(--accent)}
+.calc-money .keep{color:var(--accent)}
+.checks li::before{background:rgba(216,180,254,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23d8b4fe' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.limited{background:var(--red)}
+.limited.alt{background:var(--accent);color:var(--bg)}
+.plan{background:linear-gradient(180deg,var(--tone),#0e0719)}
+.offer-card{box-shadow:0 0 0 1px rgba(216,180,254,.22),0 30px 90px rgba(0,0,0,.5),0 0 90px rgba(168,85,247,.10)}
+.offer-card .btn{margin-top:28px}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1080px;margin:0 auto;align-items:stretch}
+.plans .offer-card{max-width:none;display:flex;flex-direction:column;align-items:center}
+.plans .offer-card.main{border-color:rgba(216,180,254,.5);box-shadow:0 0 0 1px rgba(216,180,254,.45),0 30px 90px rgba(0,0,0,.5),0 0 120px rgba(168,85,247,.22)}
+.plans .offer{font-size:clamp(30px,1rem + 2.2vw,46px)}
+.plans .checks{margin-top:22px}
+.plans .btn{margin-top:auto;padding-top:20px;padding-bottom:20px}
+.plans .checks + .btn{margin-top:28px}
+.plans .small{margin-top:18px;max-width:34ch}
+.plans .offer-card .btn{width:100%;max-width:380px}
+.spacer{height:28px;flex:1}
+/* nav */
+.navbar.scrolled{background:rgba(11,6,20,.72)}
+.nav ul{color:var(--soft)}
+/* hero: new camel + wordmark */
+.hero-camel{width:clamp(210px,21vw,300px);aspect-ratio:904/687;margin-bottom:clamp(6px,1vw,14px)}
+.hero-camel .half img{object-fit:contain}
+.wmk{display:block;width:clamp(280px,46vw,640px);height:auto;margin:0 auto}
+.hero h1{line-height:0}
+@keyframes holo{0%,100%{opacity:1;filter:drop-shadow(0 0 10px rgba(216,180,254,.25))}50%{opacity:.9;filter:drop-shadow(0 0 26px rgba(216,180,254,.55))}}
+@media (prefers-reduced-motion:no-preference){
+  .wmk{animation:wmglow 2s cubic-bezier(.23,1,.32,1) 1200ms both}
+  @keyframes wmglow{0%{filter:drop-shadow(0 0 0 rgba(216,180,254,0))}45%{filter:drop-shadow(0 0 28px rgba(216,180,254,.9))}100%{filter:drop-shadow(0 0 12px rgba(216,180,254,.45))}}
+}
+.hero .sub{font-size:clamp(19px,1rem + .9vw,26px);color:var(--soft);max-width:26em;margin-top:clamp(14px,1.8vw,22px)}
+.hero .btn{margin-top:clamp(22px,2.6vw,30px)}
+.hero .sub .w{display:inline-block;white-space:pre}
+@media (prefers-reduced-motion:no-preference){
+  .hero .sub .w{opacity:0;animation:wordIn 700ms cubic-bezier(.23,1,.32,1) both;animation-delay:calc(var(--w) * 60ms + 1000ms)}
+  @keyframes wordIn{0%{opacity:0;transform:translateY(16px);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}
+}
+/* floating model chips around the camel (desktop) */
+.orbit{position:absolute;inset:0;pointer-events:none;list-style:none;margin:0;padding:0}
+.orbit li{position:absolute;left:var(--x);top:var(--y);display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:rgba(20,11,36,.75);border:1px solid var(--edge);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.orbit li::before{content:"";position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 0 rgba(216,180,254,.6)}
+.orbit li.im::before{background:var(--neon)}
+.hero{position:relative}
+@media (prefers-reduced-motion:no-preference){
+  .orbit li{opacity:0;animation:chipIn 700ms cubic-bezier(.23,1,.32,1) both,floatY 5s ease-in-out infinite;animation-delay:calc(var(--i) * 140ms + 1500ms),calc(var(--i) * -900ms)}
+  .orbit li::before{animation:ping 2.4s ease-out infinite;animation-delay:calc(var(--i) * 400ms)}
+  @keyframes chipIn{from{opacity:0;transform:scale(.6) translateY(10px)}to{opacity:1}}
+  @keyframes floatY{0%,100%{translate:0 0}50%{translate:0 -9px}}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(216,180,254,.55)}70%,100%{box-shadow:0 0 0 12px rgba(216,180,254,0)}}
+}
+@media (max-width:1000px){.orbit{display:none}}
+/* reveal with blur (brothas-style) */
+@media (prefers-reduced-motion:no-preference){
+  html.js .rv{filter:blur(6px)}
+  html.js .rv.in{filter:blur(0);transition:opacity 800ms var(--ease-out),transform 800ms var(--ease-out),filter 800ms var(--ease-out);transition-delay:calc(var(--i,0) * 75ms)}
+}
+/* UGC phones */
+.phones{display:flex;justify-content:center;align-items:flex-end;gap:clamp(10px,2vw,28px);margin:clamp(36px,4.5vw,64px) auto 0;perspective:1200px}
+.ph{margin:0;width:clamp(104px,27vw,250px);flex:none;aspect-ratio:9/19;border-radius:clamp(18px,3vw,38px);padding:clamp(5px,.7vw,9px);background:#07030d;border:1px solid rgba(216,180,254,.28);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 70px rgba(168,85,247,.18),inset 0 0 0 1px rgba(255,255,255,.05);position:relative}
+.ph video{width:100%;height:100%;object-fit:cover;border-radius:calc(clamp(18px,3vw,38px) - clamp(5px,.7vw,9px));display:block;background:#000}
+.ph::after{content:"";position:absolute;left:50%;top:clamp(8px,1vw,14px);width:26%;height:clamp(10px,1.2vw,18px);transform:translateX(-50%);background:#07030d;border-radius:999px}
+.ph figcaption{position:absolute;left:0;right:0;bottom:calc(-1 * clamp(28px,3vw,40px));text-align:center;font-size:var(--s-small);color:var(--soft);white-space:nowrap}
+.ph.l{transform:rotate(-7deg) translateY(10px) scale(.88);transform-origin:bottom right}
+.ph.r{transform:rotate(7deg) translateY(10px) scale(.88);transform-origin:bottom left}
+@media (prefers-reduced-motion:no-preference){
+  .ph.mid{animation:floatPh 6s ease-in-out infinite}
+  .ph.l{animation:floatL 7s ease-in-out infinite}
+  .ph.r{animation:floatR 6.5s ease-in-out infinite}
+  @keyframes floatPh{0%,100%{translate:0 0}50%{translate:0 -10px}}
+  @keyframes floatL{0%,100%{transform:rotate(-7deg) translateY(10px) scale(.88)}50%{transform:rotate(-7deg) translateY(2px) scale(.88)}}
+  @keyframes floatR{0%,100%{transform:rotate(7deg) translateY(10px) scale(.88)}50%{transform:rotate(7deg) translateY(0) scale(.88)}}
+}
+.ugc-cta{margin-top:clamp(64px,7vw,96px)}
+.ugc-cta .btn{margin-top:0}
+.ugc-note{margin-top:18px}
+/* footer: glitch camel recoloured, wordmark */
+.close .holo-v{filter:hue-rotate(68deg) saturate(1.15)}
+.close{background:radial-gradient(60% 55% at 50% 22%,rgba(168,85,247,.22),transparent 70%),#07030d}
+.contact{color:var(--accent)}
+.bf{background:linear-gradient(90deg,#4c1d95,#7c3aed,#4c1d95)}
+.live{color:var(--soft)}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
+@media (max-width:560px){.ph figcaption{font-size:12px;bottom:-26px}.ph.l figcaption,.ph.r figcaption{display:none}.phones{margin-bottom:10px}.hero-camel{width:min(62vw,300px)}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -424,10 +543,11 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
 <div class="navbar" id="navbar">
 <div class="frame">
   <nav class="nav" aria-label="Main">
-    <a class="wm" href="#top"><img src="camel-mark.png" alt="" width="96" height="132">AI Silk Road</a>
+    <a class="wm" href="#top"><img src="camel-mark-purple.png" alt="" width="192" height="146">AI Silk Road</a>
     <ul>
       <li><a href="#prices">Prices</a></li>
       <li><a href="#models">Models</a></li>
+      <li><a href="#ugc">AI UGC</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -439,8 +559,16 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
 <div class="frame">
 
   <header class="hero" id="top">
-    <span class="camel hero-camel holo"><span class="half back"><img src="camel-back.webp" alt=""></span><span class="half front"><img src="camel-front.webp" alt=""></span></span>
-    <h1 class="h-in" style="--i:1"><span class="sheen">AI Silk Road</span></h1>
+    <ul class="orbit" aria-hidden="true">
+      <li style="--x:14%;--y:22%;--i:0">Seedance 2.5</li>
+      <li style="--x:9%;--y:48%;--i:1">Veo 3.1</li>
+      <li style="--x:17%;--y:72%;--i:2">Omni Flash</li>
+      <li class="im" style="--x:74%;--y:26%;--i:3">Nano Banana Pro</li>
+      <li class="im" style="--x:70%;--y:58%;--i:4">ChatGPT Images 2.5</li>
+    </ul>
+    <span class="camel hero-camel holo"><span class="half back"><img src="camel-purple-r.webp" alt=""></span><span class="half front"><img src="camel-purple-l.webp" alt=""></span></span>
+    <h1 class="h-in" style="--i:1"><img class="wmk" src="wordmark-purple.webp" alt="AI Silk Road" width="899" height="306"></h1>
+    <p class="sub words">Seedance 2.5, Veo 3.1, Nano Banana Pro &amp; more. One account. Pay less.</p>
     <a class="btn h-in" style="--i:3" href="https://discord.gg/V8RQE7hUBn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.5C.6 9.1-.3 13.7.1 18.2a19.8 19.8 0 0 0 6 3l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14.1 14.1 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.8-3.6-13.8ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg>Join our Discord</a>
     <p class="live h-in" style="--i:4">Trusted by members, brands &amp; creators.</p>
   </header>
@@ -456,10 +584,10 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
 
 <main>
   <ul class="facts frame">
-    <li class="rv"><b>5</b><span>top AI models</span></li>
-    <li class="rv"><b>39,000</b><span>credits per account</span></li>
-    <li class="rv"><b>30-day</b><span>full warranty</span></li>
-    <li class="rv"><b>1 month</b><span>access, no auto-renew</span></li>
+    <li class="rv"><b>5</b><span>top AI models, one account</span></li>
+    <li class="rv"><b>$2.99</b><span>accounts start at</span></li>
+    <li class="rv"><b>71%</b><span>cheaper per clip, up to</span></li>
+    <li class="rv"><b>30-day</b><span>warranty on the $89 account</span></li>
   </ul>
   <section class="frame sec" id="prices">
     <h2 class="rv">Pay less.<br> <span class="hl">Generate more.</span></h2>
@@ -480,7 +608,8 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
 
   <section class="plan" id="plan" aria-labelledby="plan-h">
     <div class="frame plan-in">
-      <div class="offer-card rv">
+      <div class="plans">
+      <div class="offer-card rv main">
         <span class="limited">Black Friday deal</span>
         <h2 class="offer" id="plan-h">39,000 credits, one month: <s class="was">$109</s> <span class="price-block">$89</span></h2>
         <ul class="checks">
@@ -491,6 +620,21 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
           <li>Pay with Revolut or USDT</li>
         </ul>
         <a class="btn" href="https://discord.gg/V8RQE7hUBn">Get it on Discord</a>
+      </div>
+      <div class="offer-card rv starter">
+        <span class="limited alt">Starter</span>
+        <h2 class="offer">Seedance 2.5 account: <span class="price-block">$2.99</span></h2>
+        <ul class="checks">
+          <li>1,200 credits</li>
+          <li>480p · 70 sec of video</li>
+          <li>720p · 32 sec of video</li>
+          <li>1080p · 13 sec of video</li>
+          <li>7-day warranty</li>
+          <li>Access to all the other top AI models</li>
+        </ul>
+        <p class="small">$1.28 · $2.79 · $6.86 per 30-sec clip at 480p · 720p · 1080p</p>
+        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Order on Discord</a>
+      </div>
       </div>
 
       <div class="calc col" data-ui>
@@ -515,6 +659,17 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
         <p class="small calc-note rv">Worked out from the per-clip prices above.</p>
       </div>
     </div>
+  </section>
+
+  <section class="frame sec" id="ugc">
+    <h2 class="rv">Want to make <span class="hl">AI UGC</span> videos?</h2>
+    <p class="lead rv">Person, voice and footage generated with Seedance 2.5. This one was made on an AI Silk Road account.</p>
+    <div class="phones rv">
+      <figure class="ph l"><video src="ugc-raw-web.mp4" muted loop playsinline preload="metadata" data-seek="0"></video><figcaption>Straight out of Seedance 2.5</figcaption></figure>
+      <figure class="ph mid"><video src="ugc-web.mp4" poster="ugc-poster.jpg" muted loop playsinline preload="metadata"></video><figcaption>After a quick edit</figcaption></figure>
+      <figure class="ph r"><video src="ugc-raw-web.mp4" muted loop playsinline preload="metadata" data-seek="7"></video><figcaption>Same clip, next shot</figcaption></figure>
+    </div>
+    <div class="ugc-cta rv"><a class="btn" href="https://discord.gg/V8RQE7hUBn">Get your account</a><p class="small ugc-note">Describe the person, the product and the line. Seedance 2.5 does the rest.</p></div>
   </section>
 
   <section class="frame sec" id="models">
@@ -552,6 +707,7 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
       <details class="rv"><summary>Is this legit?</summary><p class="ans">Yes. You get a working account with credits, delivered after payment, with a full 30-day warranty. If something is wrong, the team fixes or replaces it in your Discord ticket.</p></details>
       <details class="rv"><summary>Why is it cheaper than Higgsfield?</summary><p class="ans">Higgsfield wraps the model in its own credit pricing. We give you access to the same Seedance 2.5 model at a lower price per clip.</p></details>
             <details class="rv"><summary>How fast is delivery?</summary><p class="ans">Minutes after payment. Your account details arrive in your private Discord ticket.</p></details>
+      <details class="rv"><summary>What is the difference between the $2.99 and the $89 account?</summary><p class="ans">The $2.99 account comes with 1,200 credits and a 7-day warranty. The $89 account comes with 39,000 credits for one month and a full 30-day warranty. Both give you Seedance 2.5 and the other models above.</p></details>
       <details class="rv"><summary>What if I run out of credits?</summary><p class="ans">Get another account whenever you need it. No monthly plan, no auto-renew.</p></details>
       <details class="rv"><summary>Can I buy more than one account?</summary><p class="ans">Yes. Many members run several accounts at once. Just say how many in your ticket.</p></details>
       <details class="rv"><summary>How do I pay?</summary><p class="ans">Revolut or USDT, handled in a private ticket in the Discord.</p></details>
@@ -605,6 +761,12 @@ details[open] summary::after{transform:rotate(45deg);background:var(--accent);co
   render(720,false);
 
 
+  // hero subtitle: word-by-word blur-in
+  var sub=document.querySelector('.hero .sub.words');
+  if(sub){var ws=sub.textContent.trim().split(/\s+/);sub.innerHTML=ws.map(function(w,i){return '<span class="w" style="--w:'+i+'">'+w+(i<ws.length-1?' ':'')+'</span>'}).join('')}
+  // ugc phones: play in view, offset the repeated clip
+  var phv=document.querySelectorAll('.ph video');
+  if(phv.length&&'IntersectionObserver' in window){var pio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(v.dataset.seek&&!v.dataset.sought){v.dataset.sought=1;v.currentTime=+v.dataset.seek}v.play().catch(function(){})}else{v.pause()}})},{threshold:.2});phv.forEach(function(v){pio.observe(v)})}
   var atFilm=false;
   // film sound toggle
   var fv=document.getElementById('filmv'),sb=document.getElementById('snd');
