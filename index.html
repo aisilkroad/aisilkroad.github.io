@@ -534,6 +534,24 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
 .live{color:var(--soft)}
 @media (max-width:760px){.plans{grid-template-columns:1fr}}
 @media (max-width:560px){.ph figcaption{font-size:12px;bottom:-26px}.ph.l figcaption,.ph.r figcaption{display:none}.phones{margin-bottom:10px}.hero-camel{width:min(62vw,300px)}}
+
+/* big vs small account cards */
+.plan .lead{color:var(--soft)}
+.plans{margin-top:clamp(36px,4.5vw,64px)}
+.plans .offer-card{padding:clamp(26px,3vw,40px) clamp(22px,2.6vw,36px)}
+.pname{font-size:clamp(28px,1rem + 1.6vw,40px);margin-top:18px;background:linear-gradient(180deg,#fff 25%,#c9b5ea);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pprice{margin-top:10px;font-family:var(--display);font-weight:800;letter-spacing:-.05em;line-height:1;font-size:clamp(52px,1rem + 4.4vw,84px)}
+.pprice .was{color:var(--dim);font-size:.42em;text-decoration-color:var(--red);text-decoration-thickness:4px;vertical-align:.6em;margin-right:8px;letter-spacing:-.03em}
+.pcred{margin-top:12px;color:var(--soft);font-size:var(--s-body)}
+.spec{list-style:none;padding:0;margin:26px 0 0;width:100%;text-align:left}
+.spec li{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:13px 0;border-top:1px solid var(--edge);font-size:var(--s-small);line-height:1.35}
+.spec li:last-child{border-bottom:1px solid var(--edge)}
+.spec span{color:var(--soft)}
+.spec b{font-weight:600;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;flex:none}
+.plans .offer-card .btn{margin-top:26px;width:100%;max-width:none}
+.plans .offer-card.main .btn{background:linear-gradient(180deg,#fff,#dcc4fb)}
+.plans .offer-card.starter .btn{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(216,180,254,.4)}
+@media (hover:hover) and (pointer:fine){.plans .offer-card.starter .btn:hover{background:rgba(216,180,254,.08)}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -608,32 +626,36 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
 
   <section class="plan" id="plan" aria-labelledby="plan-h">
     <div class="frame plan-in">
-      <div class="plans">
+      <h2 class="rv" id="plan-h">Pick your <span class="hl">account</span></h2>
+      <p class="lead rv">Small for a test run. Big for real work. Both are one-time, no subscription.</p>
+      <div class="plans sec-body">
       <div class="offer-card rv main">
         <span class="limited">Black Friday deal</span>
-        <h2 class="offer" id="plan-h">39,000 credits, one month: <s class="was">$109</s> <span class="price-block">$89</span></h2>
-        <ul class="checks">
-          <li>Seedance 2.5 &amp; every model below</li>
-          <li>39,000 credits for one month</li>
-          <li>No auto-renew</li>
-          <li>Full 30-day warranty</li>
-          <li>Pay with Revolut or USDT</li>
+        <h3 class="pname">Big account</h3>
+        <p class="pprice"><s class="was">$109</s> <span class="price-block">$89</span></p>
+        <p class="pcred">39,000 credits · one month</p>
+        <ul class="spec">
+          <li><span>Seedance 2.5 video</span><b>~38 min 480p<br>~17 min 720p<br>~7 min 1080p</b></li>
+          <li><span>Per 30-sec clip</span><b>$1.16 · $2.54 · $6.23</b></li>
+          <li><span>Warranty</span><b>Full 30 days</b></li>
+          <li><span>Veo 3.1, Nano Banana Pro &amp; the rest</span><b>Included</b></li>
+          <li><span>Auto-renew</span><b>None</b></li>
         </ul>
-        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Get it on Discord</a>
+        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Get the big account</a>
       </div>
       <div class="offer-card rv starter">
-        <span class="limited alt">Starter</span>
-        <h2 class="offer">Seedance 2.5 account: <span class="price-block">$2.99</span></h2>
-        <ul class="checks">
-          <li>1,200 credits</li>
-          <li>480p · 70 sec of video</li>
-          <li>720p · 32 sec of video</li>
-          <li>1080p · 13 sec of video</li>
-          <li>7-day warranty</li>
-          <li>Access to all the other top AI models</li>
+        <span class="limited alt">Try it</span>
+        <h3 class="pname">Small account</h3>
+        <p class="pprice"><span class="price-block">$2.99</span></p>
+        <p class="pcred">1,200 credits</p>
+        <ul class="spec">
+          <li><span>Seedance 2.5 video</span><b>70 sec 480p<br>32 sec 720p<br>13 sec 1080p</b></li>
+          <li><span>Per 30-sec clip</span><b>$1.28 · $2.79 · $6.86</b></li>
+          <li><span>Warranty</span><b>7 days</b></li>
+          <li><span>Veo 3.1, Nano Banana Pro &amp; the rest</span><b>Included</b></li>
+          <li><span>Auto-renew</span><b>None</b></li>
         </ul>
-        <p class="small">$1.28 · $2.79 · $6.86 per 30-sec clip at 480p · 720p · 1080p</p>
-        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Order on Discord</a>
+        <a class="btn" href="https://discord.gg/V8RQE7hUBn">Get the small account</a>
       </div>
       </div>
 
