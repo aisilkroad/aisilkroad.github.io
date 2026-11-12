@@ -560,6 +560,20 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
 .gen b{font-family:var(--display);font-weight:800;font-size:clamp(24px,1rem + .9vw,32px);letter-spacing:-.04em;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
 .plans .checks{margin-top:22px;max-width:none;width:100%;font-size:var(--s-body)}
 .plans .offer-card .btn{margin-top:28px}
+
+.cost{width:100%;margin-top:10px;background:transparent;border:0;border-radius:14px}
+.cost summary{justify-content:center;gap:10px;padding:12px 16px;font-size:var(--s-body);font-weight:600;color:var(--accent);border:1px solid var(--edge);border-radius:14px}
+.cost summary::after{width:26px;height:26px;font-size:18px;border-color:var(--edge);color:var(--accent)}
+.cost[open]{background:transparent;box-shadow:none}
+.cost[open] summary{border-color:rgba(216,180,254,.4)}
+.cost .gen{margin-top:8px;animation:ans 260ms var(--ease-out)}
+.cost .gen li{align-items:center}
+.cost .gen b{display:grid;grid-template-columns:auto auto;column-gap:8px;align-items:baseline;justify-content:end;text-align:right;font-size:clamp(20px,1rem + .6vw,26px)}
+.cost .gen small{font-family:var(--text);font-weight:500;font-size:13px;letter-spacing:0;color:var(--soft)}
+.cost .gen em{display:contents;font-style:normal}
+.cost .gen em{color:var(--ink)}
+.cost .gen b em{font-size:.8em}
+@media (max-width:1000px){.cost .gen b{grid-template-columns:auto auto}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -644,6 +658,7 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
         <p class="pcred">39,000 credits · one month</p>
         <p class="gen-h">How much you can generate</p>
         <ul class="gen"><li><span>480p</span><b>~38 min</b></li><li><span>720p</span><b>~17 min</b></li><li><span>1080p</span><b>~7 min</b></li></ul>
+        <details class="cost"><summary>What it costs</summary><ul class="gen"><li><span>480p</span><b>$1.16<small>per 30 sec</small><em>$0.0387<small>per sec</small></em></b></li><li><span>720p</span><b>$2.54<small>per 30 sec</small><em>$0.0847<small>per sec</small></em></b></li><li><span>1080p</span><b>$6.23<small>per 30 sec</small><em>$0.2077<small>per sec</small></em></b></li></ul></details>
         <ul class="checks">
           <li>Full 30-day warranty</li>
           <li>All the other top AI models included</li>
@@ -657,6 +672,7 @@ details[open] summary::after{background:var(--accent);border-color:var(--accent)
         <p class="pcred">1,200 credits</p>
         <p class="gen-h">How much you can generate</p>
         <ul class="gen"><li><span>480p</span><b>70 sec</b></li><li><span>720p</span><b>32 sec</b></li><li><span>1080p</span><b>13 sec</b></li></ul>
+        <details class="cost"><summary>What it costs</summary><ul class="gen"><li><span>480p</span><b>$1.28<small>per 30 sec</small><em>$0.0427<small>per sec</small></em></b></li><li><span>720p</span><b>$2.79<small>per 30 sec</small><em>$0.0929<small>per sec</small></em></b></li><li><span>1080p</span><b>$6.86<small>per 30 sec</small><em>$0.2285<small>per sec</small></em></b></li></ul></details>
         <ul class="checks">
           <li>7-day warranty</li>
           <li>All the other top AI models included</li>
