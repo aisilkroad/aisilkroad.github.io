@@ -598,6 +598,43 @@ h2.plain{background:none;-webkit-text-fill-color:var(--ink);color:var(--ink)}
 .cost-grid b{display:block;text-align:right;font-size:clamp(19px,1rem + .5vw,24px);grid-template-columns:none}
 .cost-grid b:nth-child(2){color:var(--accent)}
 .cost-grid b:nth-child(3){color:var(--ink);font-weight:700}
+
+/* ---- v6: black page, purple vignette, clean white hairlines, purple neon ---- */
+:root{--bg:#000;--tone:#09060e;--tone2:#120c1a;--edge:rgba(255,255,255,.22);--line:rgba(255,255,255,.1);--close:#000;--neonp:rgba(168,85,247,.45)}
+html{background:#000}
+body{background:#000}
+.hero{isolation:isolate}
+.hero::before{content:"";position:absolute;left:50%;top:44%;width:min(1200px,140vw);height:min(1000px,130vw);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(120,60,175,.6),rgba(90,40,140,.28) 42%,rgba(60,25,100,.08) 65%,transparent 75%);pointer-events:none;z-index:-1}
+.sec::before{background:radial-gradient(50% 50% at 50% 50%,rgba(140,70,200,.14),transparent 70%)}
+.plan{background:radial-gradient(55% 60% at 50% 35%,rgba(120,60,175,.26),transparent 70%),#000}
+.close{background:radial-gradient(45% 50% at 50% 24%,rgba(120,60,175,.42),transparent 70%),#000;border-top:1px solid var(--line)}
+/* cards: white hairline + soft purple neon */
+.steps li,.chan,.rows li,.ptable,details,.bar,.offer-card,.gen li,.cost summary,.film-box,.seg{border:1px solid var(--edge);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0)),var(--tone);box-shadow:0 0 34px rgba(168,85,247,.10)}
+.ptable thead th,.ptable tbody tr{background:transparent}
+.gen li{background:rgba(255,255,255,.03)}
+details[open]{background:var(--tone2)}
+.offer-card{box-shadow:0 0 60px rgba(168,85,247,.16),0 30px 90px rgba(0,0,0,.6)}
+.plans .offer-card.main{border-color:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 80px rgba(168,85,247,.38),0 30px 90px rgba(0,0,0,.6)}
+.film-box{box-shadow:0 0 60px rgba(168,85,247,.22)}
+.ph{border-color:rgba(255,255,255,.4);box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 70px rgba(168,85,247,.3)}
+.msg{background:#000;box-shadow:inset 0 0 0 1px var(--line)}
+.chan{background:var(--tone)}
+/* buttons: white pill with purple neon */
+.btn,.nav .btn,.stick .btn{background:#fff;color:#0b0614;box-shadow:0 0 0 1px rgba(255,255,255,.6),0 0 36px var(--neonp),0 10px 30px rgba(0,0,0,.5)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:#fff;box-shadow:0 0 0 1px #fff,0 0 54px rgba(168,85,247,.7),0 10px 30px rgba(0,0,0,.5)}}
+.plans .offer-card.starter .btn,.plans .offer-card.main .btn{background:#fff;color:#0b0614;box-shadow:0 0 0 1px rgba(255,255,255,.6),0 0 36px var(--neonp)}
+.cost summary{color:var(--ink)}
+.navbar.scrolled{background:rgba(0,0,0,.72)}
+.bf{background:#000;border-bottom:1px solid var(--line);color:#fff}
+.bf b{color:var(--accent)}
+.hl{box-shadow:0 0 28px rgba(168,85,247,.45)}
+.price-block{box-shadow:0 0 28px rgba(168,85,247,.45)}
+.seg{box-shadow:none}
+.seg input:checked + label{background:#fff;color:#0b0614}
+.steps li::before{background:#fff;color:#0b0614}
+.models .ic{background:#fff;color:#0b0614}
+.models .ic.im{background:var(--neon)}
+details[open] summary::after{background:#fff;border-color:#fff;color:#0b0614}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
