@@ -746,6 +746,16 @@ body{background:linear-gradient(180deg,#582a7d 0%,#64348a 30%,#7a489f 65%,#9a66b
 .models .d{margin-top:8px;line-height:1.4}
 @media (max-width:1000px){.models{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.models{grid-template-columns:1fr}.models li{min-height:0}}
+
+/* hero spacing: title tight to the camel, tagline under it, button a bit lower */
+.hero-camel{margin:0 0 clamp(2px,.4vw,6px)}
+.hero h1{margin:0}
+.hero .tag2{margin-top:clamp(12px,1.4vw,18px)}
+.hero .btn{margin-top:clamp(34px,4.2vw,52px)}
+
+.hero-camel{margin-bottom:0}
+.hero h1{margin-top:clamp(-30px,-2.2vw,-10px)}
+@media (max-width:560px){.hero h1{margin-top:-10px}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
