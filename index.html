@@ -756,6 +756,19 @@ body{background:linear-gradient(180deg,#582a7d 0%,#64348a 30%,#7a489f 65%,#9a66b
 .hero-camel{margin-bottom:0}
 .hero h1{margin-top:clamp(-30px,-2.2vw,-10px)}
 @media (max-width:560px){.hero h1{margin-top:-10px}}
+
+/* title: appears with the camel, then glows twice (small, then big) and settles */
+@media (prefers-reduced-motion:no-preference){
+  .wmk{animation:wmIn2 3.2s ease-in-out 150ms both}
+  @keyframes wmIn2{
+    0%{opacity:0;transform:scale(.97);filter:drop-shadow(0 0 0 rgba(255,255,255,0))}
+    28%{opacity:1;transform:none;filter:drop-shadow(0 0 10px rgba(255,255,255,.55)) drop-shadow(0 0 28px rgba(225,195,255,.45))}
+    40%{filter:brightness(1.15) drop-shadow(0 0 14px rgba(255,255,255,.8)) drop-shadow(0 0 34px rgba(255,255,255,.5))}
+    50%{filter:brightness(1) drop-shadow(0 0 10px rgba(255,255,255,.55)) drop-shadow(0 0 28px rgba(225,195,255,.45))}
+    64%{filter:brightness(1.4) drop-shadow(0 0 22px rgba(255,255,255,1)) drop-shadow(0 0 60px rgba(255,255,255,.8))}
+    100%{opacity:1;transform:none;filter:drop-shadow(0 0 10px rgba(255,255,255,.55)) drop-shadow(0 0 28px rgba(225,195,255,.45))}
+  }
+}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
